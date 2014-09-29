@@ -3,10 +3,6 @@ import java.io.*;
 
 public class CoccosKing{
 	public static void main(String args[]){
-		//Item burger = new Item;
-		//Item hoagie = new Item;
-		//Item pizza = new Item;
-		//Item drink = new Item;
 
 		Scanner s = new Scanner(System.in);
 		int userInput = 0;
@@ -49,23 +45,62 @@ public class CoccosKing{
 
 		switch (customerSelection){
 			case "B":
-			case "b": Burger burger = new Burger("Veggie Burger", 5.00);
+			case "b": orderBurger();
 			break;
 			case "H":
-			case "h": Hoagie hoagie = new Hoagie("Italian Hoagie", 7.00);
+			case "h": orderHoagie();
 			break;
 			case "P":
-			case "p": Pizza pizza = new Pizza("Plain Pizza", 10.00)
+			case "p": orderPizza();
 			break;
-			case "D":
-			case "d": Drink drink = new Drink("Water", 2.00)
-			break;
+			//case "D":
+			//case "d": orderDrink();
+			//break;
 		}
 	}
 
-	public static void pay(){
+	public static void pay (){
 		double total = 0;
 
-		System.out.println("Your total is $" + total + "\n Thank you.);
+		System.out.println("Your total is $" + total + "\n Thank you.");
+	}
+
+	public static Burger orderBurger(){
+		Scanner s = new Scanner(System.in);
+		String burgerSelection = new String();
+		String toppingSelection = new String();
+
+		System.out.println("What type of burger do you want? (W)hopper, (H)amburger, (V)eggieburger");
+		burgerSelection = s.next();
+
+		switch (burgerSelection){
+			case "W":
+			case "w": Burger burger = new Burger("Whopper", 4.00f);
+			break;
+			case "H":
+			case "h": Burger burger = new Burger("Hamburger", 3.00f);
+			break;
+			case "V":
+			case "v": Burger burger = new Burger("Veggieburger", 3.00f);
+			break;
+		}
+
+		System.out.println("What condements do you want? (None to move on)");
+		toppingSelection = s.nextLine();
+
+		while (toppingSelection != "none" || toppingSelection != "None"){
+			if (Condiment.getCondimentFromId(burgerSelection) = null){
+				System.out.println("I'm sorry, we do not have " + toppingSelection);
+				System.out.println("Would you like another? (None to move on)" + toppingSelection);
+				toppingSelection = s.nextLine();
+			}
+			else
+				System.out.println("Would you like another? (None to move on)" + toppingSelection);
+				toppingSelection = s.nextLine();
+
+			if (finishSelection == "none" || finishSelection == "None")
+		}
+
+		System.out.println(burger.getSummary());
 	}
 }

@@ -1,9 +1,12 @@
-public class Pizza extends Item {
+//enum Toppings{pepperoni, mushroom, sausage, tomato, onion, pickle, peppers, spinach, broccoli, oregano, garlic, saltAndPepper, mayo, oil}
+//enum HoagieType{regular, italian, oldFashionedItalian, turkey, roastBeef, chickenSalad, tunaSalad, cheese, meatBall}
+
+public class Hoagie extends Item {
 	private java.util.List<Toppings> _toppings;
 
-	public Pizza (String name, float price) {
+	public Hoagie (String name, float price) {
 		super(name, price);
-		this._toppings = new java.util.LinkedList<Toppings>();
+		this._toopings = new java.util.LinkedList<Toppings>();
 	}
 	public void addToppings(Toppings t) {
 		_toppings.add(t);
