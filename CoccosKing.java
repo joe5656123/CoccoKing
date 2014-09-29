@@ -41,10 +41,31 @@ public class CoccosKing{
 	}
 
 	public static void order(){
-		System.out.println("Order");
+		Scanner s = new Scanner(System.in);
+		String customerSelection = new String();
+
+		System.out.println("What would you like to order? (B)urger, (H)oagie, (P)izza, (D)rink");
+		customerSelection = s.next();
+
+		switch (customerSelection){
+			case "B":
+			case "b": Burger burger = new Burger("Veggie Burger", 5.00);
+			break;
+			case "H":
+			case "h": Hoagie hoagie = new Hoagie("Italian Hoagie", 7.00);
+			break;
+			case "P":
+			case "p": Pizza pizza = new Pizza("Plain Pizza", 10.00)
+			break;
+			case "D":
+			case "d": Drink drink = new Drink("Water", 2.00)
+			break;
+		}
 	}
 
 	public static void pay(){
-		System.out.println("Pay");
+		double total = 0;
+
+		System.out.println("Your total is $" + total + "\n Thank you.);
 	}
 }
