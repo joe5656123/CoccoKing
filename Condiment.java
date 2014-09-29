@@ -21,6 +21,15 @@ public enum Condiment {
 		}
 		return null;
 	}
+	public static String getAllCondiments() {
+		Condiment[] condiments = Condiment.values();
+		String output = "";
+		for (Condiment c : condiments) {
+			output += c.toString() + "\n";
+		}
+		// TODO: This ^
+		return null;
+	}
 	public String toString() {
 		return this._id;
 	}

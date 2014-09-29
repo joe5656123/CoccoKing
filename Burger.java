@@ -28,4 +28,9 @@ public class Burger extends Item {
 		}
 		return s;
 	}
+
+	public String getSummery() {
+		// TODO: "A Vegie Burger with cheese and pickles"
+		return null;
+	}
 }

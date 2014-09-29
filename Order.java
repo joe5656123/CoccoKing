@@ -13,4 +13,10 @@ public class Order {
 	public java.util.List<Combo> getCombos() {
 		return _combos;
 	}
+
+
+
+	private void generateCombosFromItems() {
+		// TODO: this ^
+	}
 }
