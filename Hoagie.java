@@ -1,12 +1,9 @@
-//enum Toppings{pepperoni, mushroom, sausage, tomato, onion, pickle, peppers, spinach, broccoli, oregano, garlic, saltAndPepper, mayo, oil}
-//enum HoagieType{regular, italian, oldFashionedItalian, turkey, roastBeef, chickenSalad, tunaSalad, cheese, meatBall}
-
-public class Hoagie extends Item {
+public class Hoagie extends Entree {
 	private java.util.List<Toppings> _toppings;
 
 	public Hoagie (String name, float price) {
 		super(name, price);
-		this._toopings = new java.util.LinkedList<Toppings>();
+		this._toppings = new java.util.LinkedList<Toppings>();
 	}
 	public void addToppings(Toppings t) {
 		_toppings.add(t);

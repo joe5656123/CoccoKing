@@ -1,4 +1,4 @@
-public class Burger extends Item {
+public class Burger extends Entree {
 	private java.util.List<Condiment> _condiments;
 
 	public Burger(String name, float price) {
@@ -31,6 +31,21 @@ public class Burger extends Item {
 
 	public String getSummery() {
 		// TODO: "A Vegie Burger with cheese and pickles"
-		return null;
+		Condiment[] c = this._condiments.toArray(new Condiment[this._condiments.size()]);
+		String summery = "A " + this.getName() + " with: ";
+		if (c.length == 2) {
+			summery += c[0] + " and " + c[1] + ".";
+		} else if (c.length > 1) {
+			for (int i = 0, size = c.length; i < size; i++) {
+				if (i == size - 1) {
+					summery += "and " + c[i].toString() + ".";
+				} else {
+					summery += c[i].toString() + ", ";
+				}
+			}
+		} else {
+			summery += c[0] + ".";
+		}
+		return summery;
 	}
 }

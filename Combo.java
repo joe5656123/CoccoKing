@@ -1,19 +1,19 @@
 public class Combo {
-	private Item _item;
+	private Entree _entree;
 	private Side _side;
 	private Drink _drink;
 
-	public Combo(Item item, Side side, Drink drink) {
-		this._item = item;
+	public Combo(Entree entree, Side side, Drink drink) {
+		this._entree = entree;
 		this._side = side;
 		this._drink = drink;
 	}
 
-	public Item getItem() {
-		return this._item;
+	public Entree getEntree() {
+		return this._entree;
 	}
-	public void setItem(Item item) {
-		this._item = item;
+	public void setEntree(Entree entree) {
+		this._entree = entree;
 	}
 
 	public Side getSide() {
@@ -28,5 +28,9 @@ public class Combo {
 	}
 	public void setDrink(Drink drink) {
 		this._drink = drink;
+	}
+
+	public float getPrice() {
+		return this._entree.getPrice() + this._side.getPrice() + this._drink.getPrice();
 	}
 }

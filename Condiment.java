@@ -1,7 +1,7 @@
 public enum Condiment {
 	Mayo("Mayo"),
 	Lettuce("Lettuce"),
-	Tomatoe("Tomatoe"),
+	Tomato("Tomato"),
 	Pickle("Pickle"),
 	Ketchup("Ketchup"),
 	Onion("Onion"),

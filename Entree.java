@@ -1,13 +1,11 @@
-public class Drink extends Item{
+public class Entree extends Item {
 	private String _name;
 	private float _price;
-	private int _size;
 
-	public Drink() {}
-	public Drink(String name, float price, int size) {
+	public Entree() {}
+	public Entree(String name, float price) {
 		this._name = name;
 		this._price = price;
-		this._size = size;
 	}
 
 	public String getName() {
@@ -22,12 +20,5 @@ public class Drink extends Item{
 	}
 	public void setPrice(float price) {
 		this._price = price;
-	}
-
-	public int getSize() {
-		return this._size;
-	}
-	public void setSize(int size) {
-		this._size = size;
 	}
 }

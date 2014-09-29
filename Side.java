@@ -1,4 +1,4 @@
-public class Side {
+public class Side extends Item{
 	private String _name;
 	private float _price;
 	private String _size;

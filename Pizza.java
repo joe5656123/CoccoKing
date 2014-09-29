@@ -1,4 +1,4 @@
-public class Pizza extends Item {
+public class Pizza extends Entree {
 	private java.util.List<Toppings> _toppings;
 
 	public Pizza (String name, float price) {
