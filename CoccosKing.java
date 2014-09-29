@@ -97,8 +97,6 @@ public class CoccosKing{
 			else
 				System.out.println("Would you like another? (None to move on)" + toppingSelection);
 				toppingSelection = s.nextLine();
-
-			if (finishSelection == "none" || finishSelection == "None")
 		}
 
 		System.out.println(burger.getSummary());
