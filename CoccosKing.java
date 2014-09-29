@@ -47,12 +47,12 @@ public class CoccosKing{
 			case "B":
 			case "b": orderBurger();
 			break;
-			case "H":
-			case "h": orderHoagie();
-			break;
-			case "P":
-			case "p": orderPizza();
-			break;
+			//case "H":
+			//case "h": orderHoagie();
+			//break;
+			//case "P":
+			//case "p": orderPizza();
+			//break;
 			//case "D":
 			//case "d": orderDrink();
 			//break;
@@ -65,7 +65,8 @@ public class CoccosKing{
 		System.out.println("Your total is $" + total + "\n Thank you.");
 	}
 
-	public static Burger orderBurger(){
+	public static void orderBurger(){
+		Burger burger = new Burger();
 		Scanner s = new Scanner(System.in);
 		String burgerSelection = new String();
 		String toppingSelection = new String();
@@ -75,13 +76,16 @@ public class CoccosKing{
 
 		switch (burgerSelection){
 			case "W":
-			case "w": Burger burger = new Burger("Whopper", 4.00f);
+			case "w": burger.setName("Whopper");
+					  burger.setPrice(4.00f);
 			break;
 			case "H":
-			case "h": Burger burger = new Burger("Hamburger", 3.00f);
+			case "h": burger.setName("Hamburger");
+					  burger.setPrice(3.00f);
 			break;
 			case "V":
-			case "v": Burger burger = new Burger("Veggieburger", 3.00f);
+			case "v": burger.setName("Veggieburger");
+					  burger.setPrice(3.00f);
 			break;
 		}
 
@@ -89,7 +93,7 @@ public class CoccosKing{
 		toppingSelection = s.nextLine();
 
 		while (toppingSelection != "none" || toppingSelection != "None"){
-			if (Condiment.getCondimentFromId(burgerSelection) = null){
+			if (Condiment.getCondimentFromId(burgerSelection) == null){
 				System.out.println("I'm sorry, we do not have " + toppingSelection);
 				System.out.println("Would you like another? (None to move on)" + toppingSelection);
 				toppingSelection = s.nextLine();
@@ -99,6 +103,6 @@ public class CoccosKing{
 				toppingSelection = s.nextLine();
 		}
 
-		System.out.println(burger.getSummary());
+		System.out.println(burger.getSummery());
 	}
 }

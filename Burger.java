@@ -1,6 +1,9 @@
 public class Burger extends Entree {
 	private java.util.List<Condiment> _condiments;
 
+	public Burger() {
+	}
+
 	public Burger(String name, float price) {
 		super(name, price);
 		this._condiments = new java.util.LinkedList<Condiment>();
