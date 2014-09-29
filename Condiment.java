@@ -4,7 +4,9 @@ public enum Condiment {
 	Tomatoe("Tomatoe"),
 	Pickle("Pickle"),
 	Ketchup("Ketchup"),
-	Onion("Onion");
+	Onion("Onion"),
+	Cheese("Cheese"),
+	Bacon("Bacon");
 
 	private final String _id;
 	private Condiment(String id) {
