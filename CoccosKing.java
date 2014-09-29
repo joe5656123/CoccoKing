@@ -103,6 +103,6 @@ public class CoccosKing{
 				toppingSelection = s.nextLine();
 		}
 
-		System.out.println(burger.getSummery());
+		System.out.println(burger.getSummary());
 	}
 }

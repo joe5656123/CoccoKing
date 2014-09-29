@@ -32,7 +32,7 @@ public class Burger extends Entree {
 		return s;
 	}
 
-	public String getSummery() {
+	public String getSummary() {
 		// TODO: "A Vegie Burger with cheese and pickles"
 		Condiment[] c = this._condiments.toArray(new Condiment[this._condiments.size()]);
 		String summery = "A " + this.getName() + " with: ";
