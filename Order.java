@@ -28,11 +28,11 @@ public class Order {
 		Drink drink = null;
 
 		for (Item i : _items) {
-			if (entree != null && i instanceof Item) {
+			if (entree == null && i instanceof Entree) {
 				entree = (Entree)i;
-			} else if (side != null && i instanceof Side) {
+			} else if (side == null && i instanceof Side) {
 				side = (Side)i;
-			} else if (drink != null && i instanceof Drink) {
+			} else if (drink == null && i instanceof Drink) {
 				drink = (Drink)i;
 			}
 		}
@@ -42,7 +42,6 @@ public class Order {
 		} else {
 			Combo c = new Combo(entree, side, drink);
 			this._combos.add(c);
-			// TODO: Remove Items from list here
 			this._items.remove(entree);
 			this._items.remove(side);
 			this._items.remove(drink);

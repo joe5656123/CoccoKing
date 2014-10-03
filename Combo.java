@@ -31,6 +31,6 @@ public class Combo {
 	}
 
 	public float getPrice() {
-		return this._entree.getPrice() + this._side.getPrice() + this._drink.getPrice();
+		return this._entree.getPrice() + this._side.getPrice() + this._drink.getPrice() - .5f;
 	}
 }

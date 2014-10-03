@@ -90,17 +90,19 @@ public class CoccosKing{
 		}
 
 		System.out.println("What condements do you want? (None to move on)");
-		toppingSelection = s.nextLine();
+		toppingSelection = s.next();
 
-		while (toppingSelection != "none" || toppingSelection != "None"){
-			if (Condiment.getCondimentFromId(burgerSelection) == null){
+		while (toppingSelection != "none" && toppingSelection != "None"){
+			if (Condiment.getCondimentFromId(toppingSelection) == null){
 				System.out.println("I'm sorry, we do not have " + toppingSelection);
 				System.out.println("Would you like another? (None to move on)" + toppingSelection);
-				toppingSelection = s.nextLine();
+				toppingSelection = s.next();
 			}
-			else
+			else {
+				burger.addCondiment(toppingSelection);
 				System.out.println("Would you like another? (None to move on)" + toppingSelection);
-				toppingSelection = s.nextLine();
+				toppingSelection = s.next();
+			}
 		}
 
 		System.out.println(burger.getSummary());

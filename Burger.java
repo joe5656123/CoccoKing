@@ -2,11 +2,15 @@ public class Burger extends Entree {
 	private java.util.List<Condiment> _condiments;
 
 	public Burger() { }
-
 	public Burger(String name, float price) {
 		super(name, price);
 		this._condiments = new java.util.LinkedList<Condiment>();
 	}
+	public Burger(Burger b) {
+		super(b.getName(), b.getPrice());
+		this._condiments = new java.util.LinkedList<Condiment>(b.getCondiments());
+	}
+
 	public void addCondiment(Condiment c) {
 		_condiments.add(c);
 	}
@@ -19,7 +23,10 @@ public class Burger extends Entree {
 			return true;
 		}
 	}
-	public String getCondiments() {
+	public java.util.List<Condiment> getCondiments() {
+		return new java.util.LinkedList<Condiment>(this._condiments);
+	}
+	public String getCondimentsString() {
 		String s = "";
 		for (Condiment c : _condiments) {
 			if (c == _condiments.get(_condiments.size() - 1)) {
@@ -31,8 +38,14 @@ public class Burger extends Entree {
 		return s;
 	}
 
+	public String getDescription() {
+		// TODO: BURGER
+		//       * Mayo
+		//       * Lettuce
+		return null;
+	}
+
 	public String getSummary() {
-		// TODO: "A Vegie Burger with cheese and pickles"
 		Condiment[] c = this._condiments.toArray(new Condiment[this._condiments.size()]);
 		String summery = "A " + this.getName() + " with: ";
 		if (c.length == 2) {

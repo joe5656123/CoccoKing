@@ -22,13 +22,22 @@ public enum Condiment {
 		return null;
 	}
 	public static String getAllCondiments() {
-		Condiment[] condiments = Condiment.values();
+		Condiment[] c = Condiment.values();
 		String output = "";
-		for (Condiment c : condiments) {
-			output += c.toString() + "\n";
+		if (c.length == 2) {
+			output += c[0] + " and " + c[1] + ".";
+		} else if (c.length > 1) {
+			for (int i = 0, size = c.length; i < size; i++) {
+				if (i == size - 1) {
+					output += "and " + c[i].toString() + ".";
+				} else {
+					output += c[i].toString() + ", ";
+				}
+			}
+		} else {
+			output += c[0] + ".";
 		}
-		// TODO: This ^
-		return null;
+		return output + "\n";
 	}
 	public String toString() {
 		return this._id;

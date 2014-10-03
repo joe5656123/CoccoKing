@@ -1,13 +1,13 @@
 public enum HoagieType {
-	regular("Regular Hoagie"),
-	italian("Italian Hoagie"),
-	oldFashionedItalian("Old Fashioned Italian Hoagie"),
-	turkey("Turkey Hoagie"),
-	roastBeef("Roast Beef Hoagie"),
-	chickenSalad("Chicken Salad Hoagie"),
-	tunaSalad("Tuna Salad Hoagie"),
-	cheese("Cheese Hoagie"),
-	meatBall("Meat Ball Hoagie");
+	Regular("Regular Hoagie"),
+	Italian("Italian Hoagie"),
+	OldFashionedItalian("Old Fashioned Italian Hoagie"),
+	Turkey("Turkey Hoagie"),
+	RoastBeef("Roast Beef Hoagie"),
+	ChickenSalad("Chicken Salad Hoagie"),
+	TunaSalad("Tuna Salad Hoagie"),
+	Cheese("Cheese Hoagie"),
+	MeatBall("Meat Ball Hoagie");
 
 	private final String _id;
 	private HoagieType(String id) {
@@ -21,6 +21,24 @@ public enum HoagieType {
 			}
 		}
 		return null;
+	}
+	public static String getAllHoagieTypes() {
+		HoagieType[] c = HoagieType.values();
+		String output = "";
+		if (c.length == 2) {
+			output += c[0] + " and " + c[1] + ".";
+		} else if (c.length > 1) {
+			for (int i = 0, size = c.length; i < size; i++) {
+				if (i == size - 1) {
+					output += "and " + c[i].toString() + ".";
+				} else {
+					output += c[i].toString() + ", ";
+				}
+			}
+		} else {
+			output += c[0] + ".";
+		}
+		return output + "\n";
 	}
 	public String toString() {
 		return this._id;
