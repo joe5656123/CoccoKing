@@ -1,16 +1,18 @@
 public enum Condiment {
-	Mayo("Mayo"),
-	Lettuce("Lettuce"),
-	Tomato("Tomato"),
-	Pickle("Pickle"),
-	Ketchup("Ketchup"),
-	Onion("Onion"),
-	Cheese("Cheese"),
-	Bacon("Bacon");
+	Mayo("Mayo", 0),
+	Lettuce("Lettuce", .15f),
+	Tomato("Tomato", .15f),
+	Pickle("Pickle", 0),
+	Ketchup("Ketchup", 0),
+	Onion("Onion", 0),
+	Cheese("Cheese", .5f),
+	Bacon("Bacon", .8f);
 
 	private final String _id;
-	private Condiment(String id) {
+	private final float _price;
+	private Condiment(String id, float price) {
 		this._id = id;
+		this._price = price;
 	}
 	public static Condiment getCondimentFromId(String id) {
 		Condiment[] condiments  = Condiment.values();
@@ -41,5 +43,8 @@ public enum Condiment {
 	}
 	public String toString() {
 		return this._id;
+	}
+	public float getPrice() {
+		return this._price;
 	}
 }

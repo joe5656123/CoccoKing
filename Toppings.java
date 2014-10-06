@@ -1,22 +1,24 @@
 enum Toppings{
-	Pepperoni("Pepperoni"),
-	Mushroom("Mushroom"),
-	Sausage("Sausage"),
-	Tomato("Tomato"),
-	Onion("Onion"),
-	Pickle("Pickle"),
-	Peppers("Peppers"),
-	Spinach("Spinach"),
-	Broccoli("Broccoli"),
-	Oregano("Oregano"),
-	Garlic("Garlic"),
-	SaltAndPepper("Salt and Pepper"),
-	Mayo("Mayo"),
-	Oil("Oil");
+	Pepperoni("Pepperoni", .5f),
+	Mushroom("Mushroom", .25f),
+	Sausage("Sausage", .5f),
+	Tomato("Tomato", .15f),
+	Onion("Onion", .15f),
+	Pickle("Pickle", 0),
+	Peppers("Peppers", .15f),
+	Spinach("Spinach", .5f),
+	Broccoli("Broccoli", .5f),
+	Oregano("Oregano", 0),
+	Garlic("Garlic", 0),
+	SaltAndPepper("Salt and Pepper", 0),
+	Mayo("Mayo", 0),
+	Oil("Oil", 0);
 
 	private final String _id;
-	private Toppings(String id) {
+	private final float _price;
+	private Toppings(String id, float price) {
 		this._id = id;
+		this._price = price;
 	}
 	public static Toppings getToppingsFromId(String id) {
 		Toppings[] condiments  = Toppings.values();
@@ -47,5 +49,8 @@ enum Toppings{
 	}
 	public String toString() {
 		return this._id;
+	}
+	public float getPrice() {
+		return this._price;
 	}
 }

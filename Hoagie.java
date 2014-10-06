@@ -42,4 +42,12 @@ public class Hoagie extends Entree {
 			return true;
 		}
 	}
+
+	public float getPriceWithAddons() {
+		float output = (this.getPrice() == 0) ? 2.99f : this.getPrice();
+		for (Toppings t : _toppings) {
+			output += t.getPrice();
+		}
+		return output;
+	}
 }

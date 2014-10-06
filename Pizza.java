@@ -28,4 +28,13 @@ public class Pizza extends Entree {
 		}
 		return s;
 	}
+
+	public float getPriceWithAddons() {
+		float output = (this.getPrice() == 0) ? 2.99f : this.getPrice();
+		for (Toppings t : this._toppings) {
+			output += t.getPrice();
+		}
+		return output;
+	}
+
 }

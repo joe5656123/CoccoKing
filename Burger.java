@@ -69,4 +69,12 @@ public class Burger extends Entree {
 		}
 		return summery;
 	}
+
+	public float getPriceWithAddons() {
+		float output = (this.getPrice() == 0) ? 2.99f : this.getPrice();
+		for (Condiment c : this._condiments) {
+			output += c.getPrice();
+		}
+		return output;
+	}
 }

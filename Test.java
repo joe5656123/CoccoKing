@@ -1,5 +1,16 @@
 public class Test {
 	public static void main (String[] args) {
+		Burger b = new Burger("Whopper", 3.99f);
+		b.addCondiment(Condiment.Mayo);
+		b.addCondiment(Condiment.Lettuce);
+		b.addCondiment(Condiment.Bacon);
+
+		System.out.println(b.getPriceWithAddons());
+
+
+
+
+
 		System.out.println(Condiment.getAllCondiments());
 		System.out.println(HoagieType.getAllHoagieTypes());
 		System.out.println(Toppings.getAllToppings());

@@ -1,4 +1,4 @@
-public class Item {
+public abstract class Item {
 	private String _name;
 	private float _price;
 
