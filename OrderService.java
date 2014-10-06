@@ -26,7 +26,7 @@ public class OrderService {
 		sb.append("\n");
 		for (Combo c : order.getCombos()) {
 			sb.append(String.format("Combo: $%.2f%n", c.getPrice()));
-			sb.append("* " + c.getEntree().getName() + "\n");
+			sb.append("* " + c.getEntree().getDescription() + "\n");
 			sb.append("* " + c.getSide().getName() + "\n");
 			sb.append("* " + c.getDrink().getName() + "\n");
 		}
