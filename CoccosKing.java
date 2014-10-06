@@ -79,16 +79,16 @@ public class CoccosKing{
 
 		switch (burgerSelection){
 			case "W": case "w":
-				burger = PresetItem.getWhopper();
+				burger = PresetItems.getWhopper();
 			break;
 			case "H": case "h":
-				burger = PresetItem.getHamburger();
+				burger = PresetItems.getHamburger();
 			break;
 			case "C": case "c":
-				burger = PresetItem.getCheeseburger();
+				burger = PresetItems.getCheeseburger();
 			break;
 			case "V": case "v":
-				burger = PresetItem.getVeggieBurger();
+				burger = PresetItems.getVeggieBurger();
 			break;
 			case "B": case "b":
 				burger = new Burger("Custom Burger", 3.99f);
@@ -120,6 +120,7 @@ public class CoccosKing{
 
 	public static void orderHoagie(){
 		Hoagie hoagie = new Hoagie();
+		Scanner s = new Scanner(System.in);
 		String hoagieSelection = new String();
 
 		System.out.println("What type of hoagie do you want? (R)egular, (I)talian, (T)urkey, (C)hicken Salad, (M)eatball, (P)rovolone,");
@@ -127,32 +128,32 @@ public class CoccosKing{
 
 		switch (hoagieSelection){
 			case "R": case "r":
-				hoagie = PresetItem.getRegular();
+				hoagie = PresetItems.getRegular();
 			break;
 			case "I": case "i":
-				hoagie = PresetItem.getItalian();
+				hoagie = PresetItems.getItalian();
 			break;
 			case "T": case "t":
-				hoagie = PresetItem.getTurkey();
+				hoagie = PresetItems.getTurkey();
 			break;
 			case "C": case "c":
-				hoagie = PresetItem.getChickenSalad();
+				hoagie = PresetItems.getChickenSalad();
 			break;
 			case "M": case "m":
-				hoagie = PresetItem.getMeatball();
+				hoagie = PresetItems.getMeatBall();
 			break;
 			case "P": case "p":
-				hoagie = PresetItem.getProvole();
+				hoagie = PresetItems.getProvolone();
 			break;
 		}
 
 		_order.addItem(hoagie);
 
-		System.out.println(hoagie.getSummary());
+		System.out.println(hoagie.getDescription());
 	}
 
 	public static void orderPizza(){
-		Pizza pizza = new Pizza();
+		Pizza pizza;
 		Scanner s = new Scanner(System.in);
 		String pizzaSelection = new String();
 		char toppingSelection;
@@ -162,22 +163,22 @@ public class CoccosKing{
 
 		switch (pizzaSelection){
 			case "M": case "m":
-				pizza = PresetItem.getMeatLover();
+				pizza = PresetItems.getMeatLover();
 			return;
 			case "V": case "v":
-				pizza = PresetItem.getVeggielover();
+				pizza = PresetItems.getVeggieLover();
 			return;
 			case "W": case "w":
-				pizza = PresetItem.getWhite();
+				pizza = PresetItems.getWhite();
 			return;
 			case "D": case "d":
-				pizza = PresetItem.getDelux();
+				pizza = PresetItems.getDeluxe();
 			return;
 			case "P": case "p":
-				pizza = PresetItem.getPlain();
+				pizza = PresetItems.getPlain();
 			return;
 			case "B": case "b":
-				pizza = new Burger("Custom Pizza", 10.99f);
+				pizza = new Pizza("Custom Pizza", 10.99f);
 
 				System.out.println("What toppings do you want? (done to move on)\n" + Condiment.getAllCondiments());
 
@@ -188,8 +189,8 @@ public class CoccosKing{
 					if (toppingSelection == 'd' || toppingSelection == 'D'){
 						break;
 					}
-					else if (OrderService.getToppingFromChar(toppingSelection) != null){
-						pizza.addCondiment(OrderService.getToppingFromChar(toppingSelection));
+					else if (OrderService.getToppingsFromChar(toppingSelection) != null){
+						pizza.addToppings(OrderService.getToppingsFromChar(toppingSelection));
 					}
 					else{
 						System.out.println("I'm sorry, we do not have that.");

@@ -44,6 +44,9 @@ public class PresetItems {
 	public static Hoagie getProvolone() {
 		return new Hoagie("Provolone Hoagie", 4.99f, HoagieType.Provolone);
 	}
+	public static Hoagie getMeatBall() {
+			return new Hoagie("Meatball Hoagie", 5.99f, HoagieType.MeatBall);
+	}
 
 	// Pizzas
 	public static Pizza getMeatLover() {

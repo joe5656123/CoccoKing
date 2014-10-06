@@ -30,6 +30,6 @@ public class Hoagie extends Entree {
 		return this.getPrice() == 0 ? 4.99f : this.getPrice();
 	}
 	public String getDescription() {
-		return this._hoagieType
+		return this._hoagieType.toString();
 	}
 }
