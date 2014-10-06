@@ -1,13 +1,10 @@
 public enum HoagieType {
 	Regular("Regular Hoagie"),
 	Italian("Italian Hoagie"),
-	OldFashionedItalian("Old Fashioned Italian Hoagie"),
 	Turkey("Turkey Hoagie"),
-	RoastBeef("Roast Beef Hoagie"),
 	ChickenSalad("Chicken Salad Hoagie"),
-	TunaSalad("Tuna Salad Hoagie"),
 	Cheese("Cheese Hoagie"),
-	MeatBall("Meat Ball Hoagie");
+	MeatBall("MeatBall Hoagie");
 
 	private final String _id;
 	private HoagieType(String id) {
