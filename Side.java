@@ -1,4 +1,4 @@
-public class Side extends Item{
+public class Side extends Item{ // comments extend item
 	private String _size;
 	private Size _sizeEnum;
 

@@ -44,18 +44,21 @@ public class CoccosKing{
 		Scanner s = new Scanner(System.in);
 		String customerSelection = new String();
 
-		System.out.println("\nWhat would you like to order? (B)urger, (H)oagie, (P)izza, (D)rink");
+		System.out.println("\nWhat would you like to order? (B)urger, (H)oagie, (P)izza, (S)ide, (D)rink");
 		customerSelection = s.next();
 
 		switch (customerSelection){
 			case "B":
-			case "b": orderBurger();
+			case "b": orderBurger(); // corresponding order method
 			break;
 			case "H":
 			case "h": orderHoagie();
 			break;
 			case "P":
 			case "p": orderPizza();
+			break;
+			case "S":
+			case "s": orderSide();
 			break;
 			case "D":
 			case "d": orderDrink();
@@ -65,7 +68,7 @@ public class CoccosKing{
 
 	public static void pay (){
 		System.out.println(OrderService.getReciept(_order));
-		_order = new Order();
+		_order = new Order(); // new order after evertime pay is called
 	}
 
 	public static void orderBurger(){
@@ -79,7 +82,7 @@ public class CoccosKing{
 
 		switch (burgerSelection){
 			case "W": case "w":
-				burger = PresetItems.getWhopper();
+				burger = PresetItems.getWhopper(); // gets the type of burger
 			break;
 			case "H": case "h":
 				burger = PresetItems.getHamburger();
@@ -95,7 +98,7 @@ public class CoccosKing{
 
 				System.out.println("What condements do you want? (done to move on)\n" + Condiment.getAllCondiments());
 
-				do{
+				do{ // checks to see if they are done, if not they will get to enter more condiments
 					toppingSelection = s.next().charAt(0);
 					s.nextLine();
 
@@ -113,9 +116,9 @@ public class CoccosKing{
 			break;
 		}
 
-		_order.addItem(burger);
+		_order.addItem(burger); // adds the burger
 
-		System.out.println(burger.getSummary());
+		System.out.println(burger.getSummary()); // prints burger contents
 	}
 
 	public static void orderHoagie(){
@@ -210,13 +213,13 @@ public class CoccosKing{
 		Scanner s = new Scanner(System.in);
 		String sideSelection = new String();
 
-		System.out.println("What sides would you like?");
+		System.out.println("What sides would you like?");  // any side will do
 		side.setName(s.nextLine());
 
-		System.out.println("What size would you like? (Small, Medium, or Large)");
+		System.out.println("What size would you like? (Small, Medium, or Large)"); // gives a price for the drink
 		side.setSize(s.next().charAt(0));
 
-		_order.addItem(side);
+		_order.addItem(side); // adds the side
 	}
 
 	public static void orderDrink(){
@@ -224,12 +227,12 @@ public class CoccosKing{
 		Scanner s = new Scanner(System.in);
 		String drinkSelection = new String();
 
-		System.out.println("What drink would you like?");
+		System.out.println("What drink would you like?"); // any drink will do
 		drink.setName(s.nextLine());
 
-		System.out.println("What size would you like? (Small, Medium, or Large)");
+		System.out.println("What size would you like? (Small, Medium, or Large)"); // gives a price for the side
 		drink.setSize(s.next().charAt(0));
 
-		_order.addItem(drink);
+		_order.addItem(drink); // adds the drink
 	}
 }

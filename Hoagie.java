@@ -1,4 +1,4 @@
-public class Hoagie extends Entree {
+public class Hoagie extends Entree { // extends entree comments
 	private HoagieType _hoagieType;
 
 	public Hoagie () {

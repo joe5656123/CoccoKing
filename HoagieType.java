@@ -1,4 +1,4 @@
-public enum HoagieType {
+public enum HoagieType { // hoagie types
 	Regular("Regular Hoagie"),
 	Italian("Italian Hoagie"),
 	OldFashionedItalian("Old Fashioned Italian Hoagie"),
@@ -23,7 +23,7 @@ public enum HoagieType {
 		}
 		return null;
 	}
-	public static String getAllHoagieTypes() {
+	public static String getAllHoagieTypes() { // displays all the hoagie topings
 		HoagieType[] c = HoagieType.values();
 		String output = "";
 		if (c.length == 2) {
