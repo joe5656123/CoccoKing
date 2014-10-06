@@ -35,6 +35,7 @@ public class Drink extends Item{
 	}
 	public void setSize(Size s) {
 		this._sizeEnum = s;
+		this.setPrice(s.getPrice());
 	}
 	public void setSize(char s) {
 		Size size = OrderService.getSizeFromChar(s);
@@ -42,5 +43,6 @@ public class Drink extends Item{
 			return;
 		}
 		this._sizeEnum = size;
+		this.setPrice(size.getPrice());
 	}
 }

@@ -40,4 +40,7 @@ public enum Size {
 	public String toString() {
 		return this._id;
 	}
+	public float getPrice() {
+		return this._price;
+	}
 }

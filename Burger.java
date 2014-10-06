@@ -43,13 +43,10 @@ public class Burger extends Entree {
 	}
 
 	public String getDescription() {
-		// TODO: BURGER
-		//       * Mayo
-		//       * Lettuce
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.getName() + "\n");
+		sb.append(this.getName() + this.getPriceWithAddons() + "\n");
 		for (Condiment c : _condiments) {
-			sb.append("* " + c.toString() + "\n");
+			sb.append("    * " + c.toString() + "\n");
 		}
 		return sb.toString();
 	}

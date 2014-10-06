@@ -32,5 +32,18 @@ public class Side extends Item{
 	public void setSize(String size) {
 		this._size = size;
 		this._sizeEnum = Size.getSizeFromId(size);
+		this.setPrice(this._sizeEnum.getPrice());
+	}
+	public void setSize(Size s) {
+		this._sizeEnum = s;
+		this.setPrice(s.getPrice());
+	}
+	public void setSize(char s) {
+		Size size = OrderService.getSizeFromChar(s);
+		if (size == null) {
+			return;
+		}
+		this._sizeEnum = size;
+		this.setPrice(size.getPrice());
 	}
 }

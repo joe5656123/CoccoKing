@@ -4,7 +4,6 @@ public abstract class Entree extends Item {
 		super(name, price);
 	}
 
-	// TODO: Implement this --v
 	public abstract float getPriceWithAddons();
-	//public abstract String getDescription();
+	public abstract String getDescription();
 }

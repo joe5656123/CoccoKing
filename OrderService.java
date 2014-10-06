@@ -33,7 +33,7 @@ public class OrderService {
 		sb.append("\n");
 		for (Item i : order.getItems()) {
 			if (i instanceof Entree) {
-				sb.append(String.format("%s $%.2f%n", i.getName(), ((Entree)i).getPriceWithAddons()));
+				sb.append(((Entree)i).getDescription());
 			} else {
 				sb.append(String.format("%s $%.2f%n", i.getName(), i.getPrice()));
 			}

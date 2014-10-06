@@ -39,9 +39,9 @@ public class Pizza extends Entree {
 
 	public String getDescription() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.getName() + "\n");
+		sb.append(this.getName() + this.getPriceWithAddons() + "\n");
 		for (Toppings c : _toppings) {
-			sb.append("* " + c.toString() + "\n");
+			sb.append("    * " + c.toString() + "\n");
 		}
 		return sb.toString();
 	}

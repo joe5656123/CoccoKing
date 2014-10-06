@@ -64,7 +64,6 @@ public class PresetItems {
 		vl.addToppings(Toppings.Tomato);
 		vl.addToppings(Toppings.Onion);
 		vl.addToppings(Toppings.GreenPeppers);
-		vl.addToppings(Toppings.Spinach);
 		vl.addToppings(Toppings.Broccoli);
 		return vl;
 	}
