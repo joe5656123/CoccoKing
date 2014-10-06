@@ -92,10 +92,10 @@ public class CoccosKing{
 		//toppingSelection = s.nextLine();
 
 		do{
-			toppingSelection = s.next().CharAt(0);
+			toppingSelection = s.next().charAt(0);
 
-			if (orderService.getCondimnetFromChar(toppingSelection) != null)
-				burger.addCondiment(orderService.getCondimentFromChar(toppingSekectuib));
+			if (OrderService.getCondimentFromChar(toppingSelection) != null)
+				burger.addCondiment(OrderService.getCondimentFromChar(toppingSelection));
 			else
 				System.out.println("I'm sorry, we do not have that.");
 
@@ -109,10 +109,10 @@ public class CoccosKing{
 				toppingSelection = s.nextLine();
 			}*/
 		}
-		while (toppingSelection != 'n')
+		while (toppingSelection != 'n');
 
 		System.out.println(burger.getSummary());
 	}
 }
 
-mayo lettuce tomato pickel ketchup onion cheese bacon
+//mayo lettuce tomato pickel ketchup onion cheese bacon
