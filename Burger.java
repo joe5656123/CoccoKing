@@ -12,7 +12,9 @@ public class Burger extends Entree {
 	}
 
 	public void addCondiment(Condiment c) {
-		if (c == null) return;
+		if (c == null) {
+			return;
+		}
 		_condiments.add(c);
 	}
 	public boolean addCondiment(String id) {
