@@ -3,41 +3,41 @@ import java.io.*;
 
 public class CoccosKing{
 
-	private static Order _order;
+	private static Order _order; // cccumulates the price
 
 	public static void main(String args[]){
-		_order = new Order();
+		_order = new Order(); // new order
 
 		Scanner s = new Scanner(System.in);
 		int userInput = 0;
-		boolean exit = false;
+		boolean exit = false; // if true, exits the program
 
-		System.out.println("\n\n\n			   __________________________");
+		System.out.println("\n\n\n			   __________________________"); // very artistic graphics
 		System.out.println("			   |Welcome to Cocco's King!|");
 		System.out.println("			   --------------------------\n\n\n");
 
 		while(!exit){
-			System.out.println("               			  1) Order ");
-			System.out.println("               			  2)  Pay ");
-			System.out.println("               			  3) Leave ");
+			System.out.println("               			  1) Order "); // order food
+			System.out.println("               			  2)  Pay "); // pay for ordered food
+			System.out.println("               			  3) Leave "); // leave the resturant
 			System.out.print("			   What would you like to do? ");
 			userInput = s.nextInt();
 
 			switch (userInput){
-				case 1: order();
+				case 1: order(); // calls the order class
 				break;
-				case 2: pay();
+				case 2: pay(); // calls the pay class
 				break;
-				case 3: exit = true;
+				case 3: exit = true; // exits the program
 				break;
 				default:
 					System.out.println("\n");
-					System.out.println("		   	Please enter a Number from 1 to 3:\np");
+					System.out.println("		   	Please enter a Number from 1 to 3:\np"); // error checking
 				break;
 			}
 		}
 
-		System.out.println("			   \n\n\nThank you! Have a nice Day!");
+		System.out.println("			   \n\n\nThank you! Have a nice Day!"); // a nice goodbye to the vitims- i mean customers
 	}
 
 	public static void order(){
@@ -203,6 +203,20 @@ public class CoccosKing{
 		_order.addItem(pizza);
 
 		System.out.println(pizza.getSummary());
+	}
+
+	public static void orderSide(){
+		Side side = new Side();
+		Scanner s = new Scanner(System.in);
+		String sideSelection = new String();
+
+		System.out.println("What sides would you like?");
+		side.setName(s.nextLine());
+
+		System.out.println("What size would you like? (Small, Medium, or Large)");
+		side.setSize(s.next().charAt(0));
+
+		_order.addItem(side);
 	}
 
 	public static void orderDrink(){
