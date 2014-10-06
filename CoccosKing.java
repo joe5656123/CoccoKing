@@ -40,7 +40,7 @@ public class CoccosKing{
 		Scanner s = new Scanner(System.in);
 		String customerSelection = new String();
 
-		System.out.println("What would you like to order? (B)urger, (H)oagie, (P)izza, (D)rink");
+		System.out.println("\nWhat would you like to order? (B)urger, (H)oagie, (P)izza, (D)rink");
 		customerSelection = s.next();
 
 		switch (customerSelection){
@@ -89,7 +89,7 @@ public class CoccosKing{
 			break;
 		}
 
-		System.out.println("What condements do you want? (None to move on)");
+		System.out.println("What condements do you want? (None to move on) " + Condiment.getAllCondiments());
 		toppingSelection = s.nextLine();
 
 		while (toppingSelection != "none" || toppingSelection != "None"){
@@ -103,6 +103,6 @@ public class CoccosKing{
 				toppingSelection = s.nextLine();
 		}
 
-		System.out.println(burger.getSummary());
+		//System.out.println(burger.getSummary());
 	}
 }
