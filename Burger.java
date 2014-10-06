@@ -12,6 +12,7 @@ public class Burger extends Entree {
 	}
 
 	public void addCondiment(Condiment c) {
+		if (c == null) return;
 		_condiments.add(c);
 	}
 	public boolean addCondiment(String id) {
@@ -42,7 +43,12 @@ public class Burger extends Entree {
 		// TODO: BURGER
 		//       * Mayo
 		//       * Lettuce
-		return null;
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.getName() + "\n");
+		for (Condiment c : _condiments) {
+			sb.append("* " + c.toString() + "\n");
+		}
+		return sb.toString();
 	}
 
 	public String getSummary() {
