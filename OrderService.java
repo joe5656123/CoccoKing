@@ -6,7 +6,11 @@ public class OrderService {
 	public static float getSubTotal(Order order) {
 		float total = 0;
 		for (Item i : order.getItems()) {
-			total += i.getPrice();
+			if (i instanceof Entree) {
+				total += ((Entree)i).getPriceWithAddons();
+			} else {
+				total += i.getPrice();
+			}
 		}
 		for (Combo c : order.getCombos()) {
 			total += c.getPrice();
@@ -16,9 +20,6 @@ public class OrderService {
 
 	public static String getReciept(Order order) {
 		StringBuilder sb = new StringBuilder();
-		// TODO add setw
-		// TODO add boarder around reciept
-		// This should be the last thing we worry about
 		sb.append("=======================\n\n");
 		sb.append("      Coccos King\n\n");
 		sb.append("=======================\n");
@@ -31,7 +32,11 @@ public class OrderService {
 		}
 		sb.append("\n");
 		for (Item i : order.getItems()) {
-			sb.append(String.format("%s $%.2f%n", i.getName(), i.getPrice()));
+			if (i instanceof Entree) {
+				sb.append(String.format("%s $%.2f%n", i.getName(), ((Entree)i).getPriceWithAddons()));
+			} else {
+				sb.append(String.format("%s $%.2f%n", i.getName(), i.getPrice()));
+			}
 		}
 		sb.append("\n");
 		sb.append("=======================\n");
@@ -72,6 +77,8 @@ public class OrderService {
 				return Toppings.Mushroom;
 			case 'S': case 's':
 				return Toppings.Sausage;
+			case 'H': case 'h':
+				return Toppings.Hamburger;
 			case 'T': case 't':
 				return Toppings.Tomato;
 			case 'O': case 'o':
@@ -80,6 +87,10 @@ public class OrderService {
 				return Toppings.GreenPeppers;
 			case 'B': case 'b':
 				return Toppings.Broccoli;
+			case 'W': case 'w':
+				return Toppings.WhiteSauce;
+			case 'R': case 'r':
+				return Toppings.RedSauce;
 			default:
 				return null;
 		}
