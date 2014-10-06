@@ -69,31 +69,37 @@ public class CoccosKing{
 		Burger burger = new Burger();
 		Scanner s = new Scanner(System.in);
 		String burgerSelection = new String();
-		String toppingSelection = new String();
+		char toppingSelection;
 
 		System.out.println("What type of burger do you want? (W)hopper, (H)amburger, (V)eggieburger");
 		burgerSelection = s.next();
 
 		switch (burgerSelection){
-			case "W":
-			case "w": burger.setName("Whopper");
-					  burger.setPrice(4.00f);
+			case "W": case "w":
+				burger.setName("Whopper");
+	    		burger.setPrice(4.00f);
 			break;
-			case "H":
-			case "h": burger.setName("Hamburger");
-					  burger.setPrice(3.00f);
+			case "H": case "h": burger.setName("Hamburger");
+				burger.setPrice(3.00f);
 			break;
-			case "V":
-			case "v": burger.setName("Veggieburger");
-					  burger.setPrice(3.00f);
+			case "V": case "v":
+				burger.setName("Veggieburger");
+				burger.setPrice(3.00f);
 			break;
 		}
 
-		System.out.println("What condements do you want? (None to move on) " + Condiment.getAllCondiments());
-		toppingSelection = s.nextLine();
+		System.out.println("What condements do you want? (None to move on)\n" + Condiment.getAllCondiments());
+		//toppingSelection = s.nextLine();
 
-		while (toppingSelection != "none" || toppingSelection != "None"){
-			if (Condiment.getCondimentFromId(burgerSelection) == null){
+		do{
+			toppingSelection = s.next().CharAt(0);
+
+			if (orderService.getCondimnetFromChar(toppingSelection) != null)
+				burger.addCondiment(orderService.getCondimentFromChar(toppingSekectuib));
+			else
+				System.out.println("I'm sorry, we do not have that.");
+
+			/*if (Condiment.getCondimentFromId(burgerSelection) == null){
 				System.out.println("I'm sorry, we do not have " + toppingSelection);
 				System.out.println("Would you like another? (None to move on)" + toppingSelection);
 				toppingSelection = s.nextLine();
@@ -101,8 +107,12 @@ public class CoccosKing{
 			else
 				System.out.println("Would you like another? (None to move on)" + toppingSelection);
 				toppingSelection = s.nextLine();
+			}*/
 		}
+		while (toppingSelection != 'n')
 
-		//System.out.println(burger.getSummary());
+		System.out.println(burger.getSummary());
 	}
 }
+
+mayo lettuce tomato pickel ketchup onion cheese bacon
