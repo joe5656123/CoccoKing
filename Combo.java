@@ -1,4 +1,5 @@
 public class Combo {
+	// A Combo object has an Entree, Side, and a Drink
 	private Entree _entree;
 	private Side _side;
 	private Drink _drink;
@@ -31,6 +32,7 @@ public class Combo {
 	}
 
 	public float getPrice() {
-		return this._entree.getPriceWithAddons() + this._side.getPrice() + this._drink.getPrice() - .5f;
+		// Takes some money off because combos should be cheaper
+		return this._entree.getPriceWithAddons() + this._side.getPrice() + this._drink.getPrice() - 1f;
 	}
 }

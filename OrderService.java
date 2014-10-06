@@ -1,8 +1,10 @@
-public class OrderService {
+public class OrderService { // A helper class for all things order related
+	// Gets the total with tax
 	public static float getTotal(Order order) {
 		return getSubTotal(order) * (1.06f);
 	}
 
+	// Gets the total without tax
 	public static float getSubTotal(Order order) {
 		float total = 0;
 		for (Item i : order.getItems()) {
@@ -18,6 +20,7 @@ public class OrderService {
 		return total;
 	}
 
+	// Returns a string Reciept
 	public static String getReciept(Order order) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("=======================\n\n");
@@ -27,8 +30,8 @@ public class OrderService {
 		for (Combo c : order.getCombos()) {
 			sb.append(String.format("Combo: $%.2f%n", c.getPrice()));
 			sb.append("* " + c.getEntree().getDescription() + "\n");
-			sb.append("* " + c.getSide().getName() + "\n");
-			sb.append("* " + c.getDrink().getName() + "\n");
+			sb.append("* " + c.getSide().getName() + " $" + c.getSide().getPrice() + "\n");
+			sb.append("* " + c.getDrink().getName() + " $" + c.getDrink().getPrice() + "\n");
 		}
 		sb.append("\n");
 		for (Item i : order.getItems()) {
@@ -46,6 +49,7 @@ public class OrderService {
 		return sb.toString();
 	}
 
+	// Convers a char to a Condiment
 	public static Condiment getCondimentFromChar(char c) {
 		switch (c) {
 			case 'M': case 'm':
@@ -69,6 +73,7 @@ public class OrderService {
 		}
 	}
 
+	// Convers a char to a Topping
 	public static Toppings getToppingsFromChar(char t) {
 		switch (t) {
 			case 'P': case 'p':
@@ -95,6 +100,8 @@ public class OrderService {
 				return null;
 		}
 	}
+
+	// Converts a char to a Size
 	public static Size getSizeFromChar(char s) {
 		switch (s) {
 			case 'S': case 's':
