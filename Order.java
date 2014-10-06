@@ -7,7 +7,7 @@ public class Order {
 		_combos = new java.util.LinkedList<Combo>();
 	}
 
-	public java.util.List<Item> getEntrees() {
+	public java.util.List<Item> getItems() {
 		return new java.util.LinkedList<Item>(this._items);
 	}
 	public java.util.List<Combo> getCombos() {
@@ -18,6 +18,9 @@ public class Order {
 		this._items.add(item);
 		this.generateCombosFromEntrees();
 	}
+	public void addCombo(Combo combo) {
+		this._combos.add(combo);
+	}
 
 	private boolean generateCombosFromEntrees() {
 		Entree entree = null;
@@ -25,11 +28,11 @@ public class Order {
 		Drink drink = null;
 
 		for (Item i : _items) {
-			if (entree != null && i instanceof Item) {
+			if (entree == null && i instanceof Entree) {
 				entree = (Entree)i;
-			} else if (side != null && i instanceof Side) {
+			} else if (side == null && i instanceof Side) {
 				side = (Side)i;
-			} else if (drink != null && i instanceof Drink) {
+			} else if (drink == null && i instanceof Drink) {
 				drink = (Drink)i;
 			}
 		}
@@ -39,8 +42,9 @@ public class Order {
 		} else {
 			Combo c = new Combo(entree, side, drink);
 			this._combos.add(c);
-			// TODO: Remove Items from list here
-
+			this._items.remove(entree);
+			this._items.remove(side);
+			this._items.remove(drink);
 			return true;
 		}
 	}

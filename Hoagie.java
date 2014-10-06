@@ -1,9 +1,11 @@
 public class Hoagie extends Entree {
 	private java.util.List<Toppings> _toppings;
+	private HoagieType _hoagieType;
 
 	public Hoagie (String name, float price) {
 		super(name, price);
 		this._toppings = new java.util.LinkedList<Toppings>();
+		this._hoagieType = HoagieType.Regular;
 	}
 	public void addToppings(Toppings t) {
 		_toppings.add(t);
@@ -27,5 +29,17 @@ public class Hoagie extends Entree {
 			s += t.toString() + ", ";
 		}
 		return s;
+	}
+	public void setHoagieType(HoagieType ht) {
+		this._hoagieType = ht;
+	}
+	public boolean setHoagieType(String ht) {
+		HoagieType t = HoagieType.getHoagieTypeFromId(ht);
+		if (t == null) {
+			return false;
+		} else {
+			this.setHoagieType(t);
+			return true;
+		}
 	}
 }
