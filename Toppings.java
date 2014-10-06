@@ -1,18 +1,18 @@
 enum Toppings{
-	Pepperoni("Pepperoni", .5f),
-	Mushroom("Mushroom", .25f),
-	Sausage("Sausage", .5f),
-	Tomato("Tomato", .15f),
-	Onion("Onion", .15f),
-	Pickle("Pickle", 0),
-	Peppers("Peppers", .15f),
+	Pepperoni("Pepperoni", 1f),
+	Mushroom("Mushroom", .5f),
+	Sausage("Sausage", 1f),
+	Hamburger("Hamburger", 1f),
+	Tomato("Tomato", .5f),
+	Onion("Onion", .5f),
+	GreenPeppers("Green Peppers", .5f),
 	Spinach("Spinach", .5f),
 	Broccoli("Broccoli", .5f),
 	Oregano("Oregano", 0),
-	Garlic("Garlic", 0),
-	SaltAndPepper("Salt and Pepper", 0),
 	Mayo("Mayo", 0),
-	Oil("Oil", 0);
+	Oil("Oil", 0),
+	RedSauce("Red Sauce", 0),
+	WhiteSauce("White Sauce", 0);
 
 	private final String _id;
 	private final float _price;

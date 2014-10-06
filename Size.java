@@ -1,12 +1,14 @@
 public enum Size {
-	Small("Small"),
-	Medium("Medium"),
-	Large("Large"),
-	Other("Other");
+	Small("Small", 1.49f),
+	Medium("Medium", 1.99f),
+	Large("Large", 2.49f),
+	Other("Other", 0f);
 
 	private final String _id;
-	private Size(String id) {
+	private final float _price;
+	private Size(String id, float price) {
 		this._id = id;
+		this._price = price;
 	}
 	public static Size getSizeFromId(String id) {
 		Size[] s  = Size.values();

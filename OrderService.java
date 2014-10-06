@@ -63,4 +63,37 @@ public class OrderService {
 				return null;
 		}
 	}
+
+	public static Toppings getToppingsFromChar(char t) {
+		switch (t) {
+			case 'P': case 'p':
+				return Toppings.Pepperoni;
+			case 'M': case 'm':
+				return Toppings.Mushroom;
+			case 'S': case 's':
+				return Toppings.Sausage;
+			case 'T': case 't':
+				return Toppings.Tomato;
+			case 'O': case 'o':
+				return Toppings.Onion;
+			case 'G': case 'g':
+				return Toppings.GreenPeppers;
+			case 'B': case 'b':
+				return Toppings.Broccoli;
+			default:
+				return null;
+		}
+	}
+	public static Size getSizeFromChar(char s) {
+		switch (s) {
+			case 'S': case 's':
+				return Size.Small;
+			case 'M': case 'm':
+				return Size.Medium;
+			case 'L': case 'l':
+				return Size.Large;
+			default:
+				return null;
+		}
+	}
 }

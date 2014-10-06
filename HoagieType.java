@@ -7,7 +7,8 @@ public enum HoagieType {
 	ChickenSalad("Chicken Salad Hoagie"),
 	TunaSalad("Tuna Salad Hoagie"),
 	Cheese("Cheese Hoagie"),
-	MeatBall("Meat Ball Hoagie");
+	MeatBall("Meat Ball Hoagie"),
+	Provolone("Provolone Hoagie");
 
 	private final String _id;
 	private HoagieType(String id) {

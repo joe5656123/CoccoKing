@@ -1,7 +1,9 @@
 public class Burger extends Entree {
 	private java.util.List<Condiment> _condiments;
 
-	public Burger() { }
+	public Burger() {
+		this._condiments = new java.util.LinkedList<Condiment>();
+	}
 	public Burger(String name, float price) {
 		super(name, price);
 		this._condiments = new java.util.LinkedList<Condiment>();
@@ -12,10 +14,9 @@ public class Burger extends Entree {
 	}
 
 	public void addCondiment(Condiment c) {
-		if (c == null) {
-			return;
+		if (c != null) {
+			_condiments.add(c);
 		}
-		_condiments.add(c);
 	}
 	public boolean addCondiment(String id) {
 		Condiment c = Condiment.getCondimentFromId(id);

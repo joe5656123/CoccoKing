@@ -33,4 +33,14 @@ public class Drink extends Item{
 	public void setSize(int size) {
 		this._size = size;
 	}
+	public void setSize(Size s) {
+		this._sizeEnum = s;
+	}
+	public void setSize(char s) {
+		Size size = OrderService.getSizeFromChar(s);
+		if (size == null) {
+			return;
+		}
+		this._sizeEnum = size;
+	}
 }
