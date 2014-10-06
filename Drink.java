@@ -1,4 +1,4 @@
-public class Drink extends Item{
+public class Drink extends Item{ // comments extend item
 	private int _size;
 	private Size _sizeEnum;
 

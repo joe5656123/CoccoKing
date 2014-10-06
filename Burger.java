@@ -1,4 +1,4 @@
-public class Burger extends Entree {
+public class Burger extends Entree { // comments extend entree
 	private java.util.List<Condiment> _condiments;
 
 	public Burger() {

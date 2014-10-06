@@ -1,13 +1,13 @@
 public class PresetItems {
 	// Burgers
-	public static Burger getWhopper() {
+	public static Burger getWhopper() { // names, prices, and condiments
 		Burger whopper = new Burger("Whopper", 3.99f);
 		for (Condiment c : Condiment.values()) {
 			whopper.addCondiment(c);
 		}
 		return whopper;
 	}
-	public static Burger getVeggieBurger() {
+	public static Burger getVeggieBurger() { // names, prices, and condiments
 		Burger v = new Burger("Veggie Burger", 3.99f);
 		for (Condiment c : Condiment.values()) {
 			if (c != Condiment.Bacon) {
@@ -16,19 +16,19 @@ public class PresetItems {
 		}
 		return v;
 	}
-	public static Burger getHamburger() {
+	public static Burger getHamburger() { // names, prices, and condiments
 		Burger burg = new Burger("Hamburger", .99f);
 		burg.addCondiment(Condiment.Pickle);
 		burg.addCondiment(Condiment.Ketchup);
 		return burg;
 	}
-	public static Burger getCheeseburger() {
+	public static Burger getCheeseburger() {  // names, prices, and condiments with cheese
 		Burger cb = getHamburger();
 		cb.addCondiment(Condiment.Cheese);
 		return cb;
 	}
 
-	// Hoagies
+	// Hoagies are all preset and you may not change them
 	public static Hoagie getRegular() {
 		return new Hoagie("Regular Hoagie", 3.99f);
 	}
@@ -48,7 +48,7 @@ public class PresetItems {
 			return new Hoagie("Meatball Hoagie", 5.99f, HoagieType.MeatBall);
 	}
 
-	// Pizzas
+	// Pizzas are preset and build-your-own like burgers with the same instantiation for price, name, and toppings instead of condiments
 	public static Pizza getMeatLover() {
 		Pizza tmt = new Pizza("Triple Meat Treat", 14.99f);
 		tmt.addToppings(Toppings.RedSauce);

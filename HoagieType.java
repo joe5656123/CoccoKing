@@ -14,7 +14,7 @@ public enum HoagieType { // hoagie types
 	private HoagieType(String id) {
 		this._id = id;
 	}
-	public static HoagieType getHoagieTypeFromId(String id) {
+	public static HoagieType getHoagieTypeFromId(String id) { // gets all the hoagie types
 		HoagieType[] condiments  = HoagieType.values();
 		for (HoagieType currentHoagieType : condiments) {
 			if (currentHoagieType.toString() == id) {

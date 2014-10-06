@@ -1,4 +1,4 @@
-public enum Condiment {
+public enum Condiment { // comments extend toppings
 	Mayo("Mayo", 0),
 	Lettuce("Lettuce", .15f),
 	Tomato("Tomato", .15f),

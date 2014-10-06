@@ -1,4 +1,4 @@
-enum Toppings{
+enum Toppings{ // Type of toppings to put on a pizza with the correct price
 	Pepperoni("Pepperoni", 1f),
 	Mushroom("Mushroom", .5f),
 	Sausage("Sausage", 1f),
@@ -10,13 +10,13 @@ enum Toppings{
 	RedSauce("Red Sauce", 0),
 	WhiteSauce("White Sauce", 0);
 
-	private final String _id;
-	private final float _price;
+	private final String _id; // name of topping
+	private final float _price; // price of topping
 	private Toppings(String id, float price) {
 		this._id = id;
 		this._price = price;
 	}
-	public static Toppings getToppingsFromId(String id) {
+	public static Toppings getToppingsFromId(String id) { // gets all the toppings for a delux pizza
 		Toppings[] condiments  = Toppings.values();
 		for (Toppings currentToppings : condiments) {
 			if (currentToppings.toString() == id) {
@@ -25,7 +25,7 @@ enum Toppings{
 		}
 		return null;
 	}
-	public static String getAllToppings() {
+	public static String getAllToppings() { // displays all the toppings
 		Toppings[] c = Toppings.values();
 		String output = "";
 		if (c.length == 2) {
