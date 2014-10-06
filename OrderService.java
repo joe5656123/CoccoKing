@@ -40,4 +40,27 @@ public class OrderService {
 		sb.append(String.format("Total: $%.2f%n", getTotal(order)));
 		return sb.toString();
 	}
+
+	public static Condiment getCondimentFromChar(char c) {
+		switch (c) {
+			case 'M': case 'm':
+				return Condiment.Mayo;
+			case 'L': case 'l':
+				return Condiment.Lettuce;
+			case 'T': case 't':
+				return Condiment.Tomato;
+			case 'P': case 'p':
+				return Condiment.Pickle;
+			case 'K': case 'k':
+				return Condiment.Ketchup;
+			case 'O': case 'o':
+				return Condiment.Onion;
+			case 'C': case 'c':
+				return Condiment.Cheese;
+			case 'B': case 'b':
+				return Condiment.Bacon;
+			default:
+				return null;
+		}
+	}
 }
