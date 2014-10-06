@@ -6,11 +6,7 @@ enum Toppings{
 	Tomato("Tomato", .5f),
 	Onion("Onion", .5f),
 	GreenPeppers("Green Peppers", .5f),
-	Spinach("Spinach", .5f),
 	Broccoli("Broccoli", .5f),
-	Oregano("Oregano", 0),
-	Mayo("Mayo", 0),
-	Oil("Oil", 0),
 	RedSauce("Red Sauce", 0),
 	WhiteSauce("White Sauce", 0);
 

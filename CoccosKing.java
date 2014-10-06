@@ -153,7 +153,7 @@ public class CoccosKing{
 	}
 
 	public static void orderPizza(){
-		Pizza pizza;
+		Pizza pizza = null;
 		Scanner s = new Scanner(System.in);
 		String pizzaSelection = new String();
 		char toppingSelection;
@@ -164,23 +164,23 @@ public class CoccosKing{
 		switch (pizzaSelection){
 			case "M": case "m":
 				pizza = PresetItems.getMeatLover();
-			return;
+			break;
 			case "V": case "v":
 				pizza = PresetItems.getVeggieLover();
-			return;
+			break;
 			case "W": case "w":
 				pizza = PresetItems.getWhite();
-			return;
+			break;
 			case "D": case "d":
 				pizza = PresetItems.getDeluxe();
-			return;
+			break;
 			case "P": case "p":
 				pizza = PresetItems.getPlain();
-			return;
+			break;
 			case "B": case "b":
 				pizza = new Pizza("Custom Pizza", 10.99f);
 
-				System.out.println("What toppings do you want? (done to move on)\n" + Condiment.getAllCondiments());
+				System.out.println("What toppings do you want? (done to move on)\n" + Toppings.getAllToppings());
 
 				do{
 					toppingSelection = s.next().charAt(0);
