@@ -9,7 +9,7 @@ public class CoccosKing{
 		_order = new Order(); // new order
 
 		Scanner s = new Scanner(System.in);
-		int userInput = 0;
+		char userInput = ' ';
 		boolean exit = false; // if true, exits the program
 
 		System.out.println("\n\n\n			   __________________________"); // very artistic graphics
@@ -21,14 +21,14 @@ public class CoccosKing{
 			System.out.println("               			  2)  Pay "); // pay for ordered food
 			System.out.println("               			  3) Leave "); // leave the resturant
 			System.out.print("			   What would you like to do? ");
-			userInput = s.nextInt();
+			userInput = s.next().charAt(0);
 
 			switch (userInput){
-				case 1: order(); // calls the order class
+				case '1': case 'O': case 'o': order(); // calls the order class
 				break;
-				case 2: pay(); // calls the pay class
+				case '2': case 'P': case 'p': pay(); // calls the pay class
 				break;
-				case 3: exit = true; // exits the program
+				case '3': case 'L': case 'l': exit = leave(); // exits the program
 				break;
 				default:
 					System.out.println("\n");
@@ -69,6 +69,15 @@ public class CoccosKing{
 	public static void pay (){
 		System.out.println(OrderService.getReciept(_order));
 		_order = new Order(); // new order after evertime pay is called
+	}
+
+	public static boolean leave() {
+		if (_order.getItems().size() == 0 && _order.getCombos().size() == 0) {
+			return true;
+		} else {
+			System.out.println("Hey wait!  You have to pay for that!");
+			return false;
+		}
 	}
 
 	public static void orderBurger(){
