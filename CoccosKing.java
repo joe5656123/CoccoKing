@@ -37,7 +37,7 @@ public class CoccosKing{
 			}
 		}
 
-		System.out.println("			   \n\n\nThank you! Have a nice Day!"); // a nice goodbye to the vitims- i mean customers
+		System.out.println("			   \n\n\nThank you! Have a nice Day!"); // a nice goodbye to the victims- i mean customers
 	}
 
 	public static void order(){
